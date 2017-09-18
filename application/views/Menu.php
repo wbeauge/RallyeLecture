@@ -1,7 +1,21 @@
 <!-- navigation -->
 <div class="navigation">
     <a href="<?php echo base_url(); ?>">home</a>
-    <?php foreach ($options as $o) { ?>
-        <a href="<?php echo "{$o[0]}/{$o[1]}"; ?>"><?php echo $o[2]; ?></a>
-    <?php } // end foreach?>
+    <?php foreach ($options as $parametres) : ?>
+		<?php
+		$count=count($parametres);
+        $i=0;
+        $uri = '';
+        foreach ($parametres as $parametre) {
+            if ($i<$count-1) {
+                $uri=$uri."{$parametre}/";
+            }
+            else {
+                $option=$parametre;
+            }
+            $i++;
+        }
+        ?>
+        <a href="<?php echo $uri; ?>"><?php echo $option; ?></a>
+    <?php endforeach; ?>
 </div>
