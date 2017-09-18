@@ -19,7 +19,7 @@ Donnez les droits à un compte administrateur de la base de données voici un sc
 >> les groupes d'utilisateurs "Enseignant" et "Elève" seront créés lors du premier lancement du site.
 
 #### 4. Paramétrez l'accès à la base de données dans Code Igniter.
-le fichier de configuration de l'accès à la base de données dans code igniter se trouve ici [/application/config/database.php](./application/config/)
+le fichier de configuration de l'accès à la base de données dans code igniter se trouve ici [/application/config/database.php](./application/config/database.php)
 vérifiez que les paramètres d'accès à la base de données sont cohérents avec votre environnement :
 ```php
     'hostname' => 'localhost',
