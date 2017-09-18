@@ -32,6 +32,7 @@ class Eleve extends CI_Controller {
             $email=$this->input->post('login');
             // créer le aauth_user à ajouter au controle de validation
             $idAauthUser=$this->aauth->create_user($email,$password);
+            $this->aauth->unban_user($idAauthUser);
             $params=array(
                 'idClasse'=>$this->input->post('idClasse'),
                 'nom'=>$this->input->post('nom'),
