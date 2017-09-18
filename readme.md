@@ -30,6 +30,7 @@ vérifiez que les paramètres d'accès à la base de données sont cohérents av
 ```
 
 #### 5. Accéder au site
->> Vous pouvez maintenant accéder au site web et consulter les différentes tables en utilisant le compte qui est créé automatiquement au lancement du site web : 
-* user : admin@sio.jjr
-* pwd  : siojjr
+Vous pouvez maintenant accéder au site web et consulter les différentes tables en utilisant le compte qui est créé automatiquement au lancement du site web : 
+
+- user : admin@sio.jjr
+- pwd  : siojjr
