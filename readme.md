@@ -14,8 +14,8 @@ les scripts de création des tables liées aux autorisations se trouvent dans le
 Le code de la bibliothèque Aauth est déjà présent dans le dépôt rallyeLecture, vous n'avez pas à l'installer.
 
 #### 3. Insérez les données exemples
-On vous fournit le script d'insertion des données du jeu de test, disponible ici : [/sql/rl/insertTableRallyeLecture.sql](./sql/rl/). 
-Donnez les droits à un compte administrateur de la base de données voici un script exemple : [/sql/rl/grant.sql](./sql/rl/).
+On vous fournit le script d'insertion des données du jeu de test, disponible ici : [/sql/rl/insertTableRallyeLecture.sql](./sql/rl/insertTableRallyeLecture.sql). 
+Donnez les droits à un compte administrateur de la base de données voici un script exemple : [/sql/rl/grant.sql](./sql/rl/grant.sql).
 >> les groupes d'utilisateurs "Enseignant" et "Elève" seront créés lors du premier lancement du site.
 
 #### 4. Paramétrez l'accès à la base de données dans Code Igniter.
