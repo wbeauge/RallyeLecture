@@ -2425,7 +2425,7 @@ class Aauth {
 
 	public function generate_recaptcha_field(){
 		$content = '';
-		if($this->config_vars['ddos_protection'] && $this->config_vars['recaptcha_active'] && $this->get_login_attempts() >= $this->config_vars['recaptcha_login_attempts']){
+		if($this->config_vars['ddos_protection'] && $this->config_vars['recaptcha_active'] && $this->get_login_attempts() <= $this->config_vars['recaptcha_login_attempts']){
 			$content .= "<script type='text/javascript' src='https://www.google.com/recaptcha/api.js'></script>";
 			$siteKey = $this->config_vars['recaptcha_siteKey'];
 			$content .= "<div class='g-recaptcha' data-sitekey='{$siteKey}'></div>";
