@@ -85,6 +85,7 @@ class Enseignant extends CI_Controller {
     function remove($id) {
         $enseignant=$this->enseignantModel->get_enseignant($id);
         if (isset($enseignant['id'])) {
+            $this->aauth->delete_user($enseignant['idAuth']);
             $this->enseignantModel->delete_enseignant($id);
             redirect('Enseignant/Index');
         }
@@ -92,5 +93,4 @@ class Enseignant extends CI_Controller {
             show_error("L'enseignant que vous essayez de supprimer n'existe pas");
         }
     }
-
 }
