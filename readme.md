@@ -1,31 +1,35 @@
-# Rallye Lecture
+# Rallye Lecture : ppe situation initiale
 
-Il s'agit de la situation initiale du ppe. comportant d'une part le  
-Site web rallye lecture ainsi que la librairie de gestion des droits d'accès
+[TOC]
 
+Il s'agit de la situation initiale du ppe. Comportant d'une part le site web rallyeLecture ainsi que la librairie de gestion des droits d'accès.
 
-Mettez en place la base de données liée au rallye lecture
-[schéma bd rallye](/sql/schemaDbRallyeLecture.PNG)
+#### 1. Mettez en place la base de données rallye lecture
+![schéma bd rallye](./sql/schemaDbRallyeLecture.PNG)
 
-Mettez en place les tables liées à la gestion des autorisations.
-[schéma bd aauth](/sql/schemaDbAauth.PNG)
+#### 2. Tables liées à la gestion des autorisations.
+![schéma bd aauth](./sql/schemaDbAauth.PNG)
+les scripts de création des tables liées aux autorisations se trouvent dans le répertoire : [/sql/aauth](./sql/aauth)
+>> Ces tables sont à créer directement dans la base *rallyeLecture*. Vous pouvez consulter la documentation liée à l'utilisation de la classe Aauth ici : [dépôt Aauth](https://github.com/emreakay/CodeIgniter-Aauth) et [wiki Aauth](https://github.com/magefly/CodeIgniter-Aauth/wiki/_pages).
+Le code de la bibliothèque Aauth est déjà présent dans le dépôt rallyeLecture, vous n'avez pas à l'installer.
 
-grace au script de création des tables est présent dans le répertoire :
+#### 3. Insérez les données exemples
+On vous fournit le script d'insertion des données du jeu de test, disponible ici : [/sql/rl/insertTableRallyeLecture.sql](./sql/rl/). 
+Donnez les droits à un compte administrateur de la base de données voici un script exemple : [/sql/rl/grant.sql](./sql/rl/).
+>> les groupes d'utilisateurs "Enseignant" et "Elève" seront créés lors du premier lancement du site.
 
-Vous pouvez consulter la documentation liée à l'utilisation de la classe AAuth ici :
-[documentation du Wiki](https://github.com/emreakay/CodeIgniter-Aauth/wiki/_pages)
-[documentation git hub](https://github.com/emreakay/CodeIgniter-Aauth)
-Le code de cette bibliothèque est déjà présent dans le dépot.
-dans le répertoire rallyeLecture\
+#### 4. Paramétrez l'accès à la base de données dans Code Igniter.
+le fichier de config se trouve ici : [configuration de l'accès à la base de données dans code igniter : database.php](./application/config/)
+vérifiez que les paramètres d'accès à la base de données sont cohérents avec votre environnement :
+```php
+    'hostname' => 'localhost',
+    'username' => 'adminRallyeLecture',
+    'password' => 'siojjr',
+    'database' => 'rallyeLecture',
+    'dbdriver' => 'mysqli',
+```
 
-Une fois la base mise en place, 
-> pensez à insérez les données exemples : un script est présent dans le répertoire : rallyeLecture/sql/rl
-> donnez les droits à un compte administrateur de la base de données.
-
-Vous pouvez alors accéder au site web et consulter les différentes tables en 
-utilisant le compte qui est créé automatiquement au lancement du site web : 
-* user admin@sio.jjr
-* pwd siojjr
-
-les groupes d'utilisateurs "Enseignant" et "Elève" sont égalements créés lors du premier
-lancement du site. 
+#### 5. Accéder au site
+>> Vous pouvez maintenant accéder au site web et consulter les différentes tables en utilisant le compte qui est créé automatiquement au lancement du site web : 
+user : admin@sio.jjr
+pwd  : siojjr
