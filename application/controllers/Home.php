@@ -25,7 +25,7 @@ class Home extends CI_Controller {
         $this->load->view('AppHeader',$data);
         // le menu est conditionné par le groupe.
         $data['options']=$this->Menu->GetOptions($groupe);
-        $this->load->view('menu',$data);
+        $this->load->view('Menu',$data);
         $this->load->view('AppFooter');
     }
 
