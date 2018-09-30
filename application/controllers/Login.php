@@ -26,8 +26,7 @@ class Login extends CI_Controller {
         if ($this->form_validation->run()) {
             $userAuth=$this->aauth->get_user();
             $groupe=$this->getGroupe();
-            $user=$this->getUser($groupe);
-
+            $user=$this->getUser($groupe,$userAuth->id);
             $this->session->login=$userAuth->email;
             $this->session->groupe=$groupe;
             $this->session->iduser=$user['id'];
@@ -88,8 +87,7 @@ class Login extends CI_Controller {
         return $groupe;
     }
 
-    private function getUser($groupe) {
-        $idAuth=$this->aauth->get_user()->id;
+    private function getUser($groupe,$idAuth) {
         switch ($groupe) {
             case 'Enseignant':
                 $row=$this->enseignantModel->get_Where('idAuth',$idAuth);
