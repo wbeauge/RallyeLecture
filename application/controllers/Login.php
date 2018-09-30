@@ -32,7 +32,7 @@ class Login extends CI_Controller {
             $this->session->groupe=$groupe;
             $this->session->iduser=$user['id'];
             $this->session->username=$user['prenom'].' '.$user['nom'];
-            redirect('home');
+            redirect('Home');
         }
         else {
             $data['title']='Connectez vous';
