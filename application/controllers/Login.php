@@ -43,17 +43,14 @@ class Login extends CI_Controller {
     }
 
     private function create() {
-        $this->aauth->create_user('admin@sio.jjr.fr','siojjr','Admin');
+        $this->aauth->create_user('admin@sio.jjr.fr','siojjr');
         $this->aauth->add_member($this->aauth->get_user_id('admin@sio.jjr.fr'),'Admin');
         $this->aauth->create_group('Elève');
         $this->aauth->create_group('Enseignant');
-        //$this->aauth->add_member($this->aauth->get_user_id('olivier.debbache@gmail.com'),'Enseignant');
         // foreach ($this->aauth->list_groups() as $g) {
         //    echo $g->name;
         //    echo $g->definition."<br>";
         // }
-        // $this->aauth->create_user('olivier.debbache@gmail.com','siojjr','oDebbache');
-        // $this->EnseignantModel->add_enseignant(array('nom'=>'debbache','prenom'=>'olivier',''=>'olivier.debbache@gmail.com'));
     }
 
     function check_password($password) {
