@@ -4,11 +4,11 @@ class Reponse extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('Reponsemodel');
+        $this->load->model('ReponseModel');
     }
 
     function index() {
-        $data['reponses']=$this->Reponsemodel->get_all_reponses();
+        $data['reponses']=$this->ReponseModel->get_all_reponses();
 
         $data['title']='Les réponses aux quizz';
         $this->load->view('AppHeader',$data);
@@ -26,7 +26,7 @@ class Reponse extends CI_Controller {
                 'idproposition'=>$this->input->post('idproposition'),
             );
 
-            $reponse_id=$this->Reponsemodel->add_reponse($params);
+            $reponse_id=$this->ReponseModel->add_reponse($params);
             redirect('reponse/index');
         }
         else {
@@ -43,11 +43,11 @@ class Reponse extends CI_Controller {
      */
 
     function remove($idparticiperrallye) {
-        $reponse=$this->Reponsemodel->get_reponse($idparticiperrallye);
+        $reponse=$this->ReponseModel->get_reponse($idparticiperrallye);
 
         // check if the reponse exists before trying to delete it
         if (isset($reponse['idparticiperrallye'])) {
-            $this->Reponsemodel->delete_reponse($idparticiperrallye);
+            $this->ReponseModel->delete_reponse($idparticiperrallye);
             redirect('reponse/index');
         }
         else
