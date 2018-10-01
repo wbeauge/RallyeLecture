@@ -55,13 +55,8 @@ Vous pouvez maintenant accéder au site web et consulter les différentes tables
 - user : admin@sio.jjr
 - pwd  : siojjr
 
-<img src="./doc/rlHomeVisiteur.png" width="300" height="225"/>
-<img src="./doc/rlLogin.png" width="300" height="225"/>
-<img src="./doc/rlHomeAdmin.png" width="300" height="225"/>
-<!--
 ![home visiteur](./doc/rlHomeVisiteur.png)
 ![login](./doc/rlLogin.png)
 ![home admin](./doc/rlHomeAdmin.png)
--->
 
 [readme.md au format pdf](./readme.pdf)
